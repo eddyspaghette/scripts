@@ -47,6 +47,7 @@ copy_file() {
 }
 
 start() {
+  cecho "YELLOW" "Start: $(date)"
   copy_dir $CONFIG_DIR $ALACRITTY_DIR
   copy_dir $CONFIG_DIR $NVIM_DIR
   copy_dir $CONFIG_DIR $LF_DIR
@@ -55,6 +56,7 @@ start() {
   copy_file $TMUX_DIR "" ".tmux.conf"
   copy_file $CONFIG_DIR "" "starship.toml"
   copy_file $TMUX_DIR "" ".zshrc"
+  cecho "YELLOW" "End: $(date)"
 }
 
 start
